@@ -1,0 +1,24 @@
+{
+  "name": "giwu",
+  "version": "1.0.0",
+  "description": "a bible app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [
+    "bible"
+  ],
+  "author": "Encoded Logic",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
