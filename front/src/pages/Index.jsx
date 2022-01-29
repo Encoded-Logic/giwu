@@ -6,13 +6,13 @@ export const Index = ({ appData ,setappData }) => {
 	const selectBible = (e) =>{
 		e.preventDefault()
 		let newAppData = appData
-		newAppData.bible = ""
+		newAppData.bible = e.target.value
 		setappData(newAppData)
 	}
 	const selectCompare = (e) =>{
 		e.preventDefault()
 		let newAppData = appData
-		newAppData.compare = ""
+		newAppData.compare = e.target.value
 		setappData(newAppData)
 	}
 	return <div id="root" className="flexMe centerMy fullIt noFlow">
@@ -40,7 +40,7 @@ export const Index = ({ appData ,setappData }) => {
 					</select>
 				</div>
 				<div className="subBox flexMe centerMy">
-					<select defaultValue={appData.compare} onChange={selectBible} className="btn">
+					<select defaultValue={appData.compare} onChange={selectCompare} className="btn">
 						<option value="">sub (optional)</option>
 						<option value="kjv">King jams Version</option>
 						<option value="nev">New English Version</option>
