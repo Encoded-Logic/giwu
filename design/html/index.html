@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme='dark'>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giwu</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div id="root" class="flexMe centerMy fullIt noFlow">
+        <div class="glassbox welcome">
+            <h1>Welcon to GIWU</h1>
+            <h3>God Is With Us</h3>
+            <p>This app will allow to read up to two bibles at the same time</p>
+            <p>Please choose a theme and bible  to continue and kindly note that we use browser cooies and storeg to remember the chooses you made.</p>
+            <div class="subBoxs flexMe">
+                <div class="subBox bg-gradient flexMe centerMy pointMe shadowHover" onclick="toggleTheme('default')">
+                    <span class="btn active">Default</span>
+                </div>
+                <div class="subBox bg-light-gradient text-dark flexMe centerMy pointMe shadowHover" onclick="toggleTheme('light')">
+                    <span class="btn active">Light</span>
+                </div>
+                <div class="subBox bg-dark-gradient flexMe centerMy pointMe shadowHover" onclick="toggleTheme('dark')">
+                    <span class="btn active">Dark</span>
+                </div>
+            </div>
+            <div class="subBoxs flexMe">
+                <div class="subBox flexMe centerMy">
+                    <select class="btn">
+                        <option value="kjv">King jams Version</option>
+                        <option value="nev">New English Version</option>
+                    </select>
+                </div>
+                <div class="subBox flexMe centerMy">
+                    <select class="btn">
+                        <option value="">sub (optional)</option>
+                        <option value="kjv">King jams Version</option>
+                        <option value="nev">New English Version</option>
+                    </select>
+                </div>
+            </div>
+            <div class="actionBtn">
+                <span class="btn pointMe">Continue</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/global.js"></script>
+</body>
+</html>
