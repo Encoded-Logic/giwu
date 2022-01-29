@@ -1,6 +1,6 @@
 # server dependencies
 /node_modules
-
+/old_code
 /.pnp
 .pnp.js
 
