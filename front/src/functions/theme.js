@@ -4,7 +4,6 @@ const toggleTheme = (targetTheme) => {
 	if (currentTheme === targetTheme) {
 		return;
 	}
-	console.log(targetTheme);
 	document.documentElement.setAttribute('data-theme', targetTheme)
 	localStorage.setItem('theme', targetTheme);
 };

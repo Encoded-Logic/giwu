@@ -10,24 +10,19 @@ import './App.css';
 import { Fallback } from "./pages/Fallback";
 import { Index } from "./pages/Index";
 import { Read } from "./pages/Read";
+import AppDataContextProvifer from "./store/appData";
 
 function App() {
-	const [appData,setappData] = React.useState({
-		    bible:"kjv",
-		    compare:"",
-			selected:{
-				book:"genesis",
-				chapter:1
-			}
-	})
 	return (
-		<Router>
-			<Routes>
-				<Route exact path="/read" element={<Read appData={appData}/>}/>
-				<Route exact path="/" element={<Index setappData={setappData} appData={appData}/>}/>
-				<Route path="*" element={<Fallback/>}/>
-			</Routes>
-		</Router>
+		<AppDataContextProvifer>
+			<Router>
+				<Routes>
+					<Route exact path="/read" element={<Read />} />
+					<Route exact path="/" element={<Index />} />
+					<Route path="*" element={<Fallback />} />
+				</Routes>
+			</Router>
+		</AppDataContextProvifer>
 	);
 }
 

@@ -1,20 +1,11 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { toggleTheme } from "../functions/theme"
+import { AppDataContext } from '../store/appData';
 
-export const Index = ({ appData ,setappData }) => {
-	const selectBible = (e) =>{
-		e.preventDefault()
-		let newAppData = appData
-		newAppData.bible = e.target.value
-		setappData(newAppData)
-	}
-	const selectCompare = (e) =>{
-		e.preventDefault()
-		let newAppData = appData
-		newAppData.compare = e.target.value
-		setappData(newAppData)
-	}
+export const Index = () => {
+	const {appData, selectBible, selectCompare} = useContext(AppDataContext);
+	console.log(appData.bibleList);
 	return <div id="root" className="flexMe centerMy fullIt noFlow">
 		<div className="glassbox welcome">
 			<h1>Welcon to GIWU</h1>
@@ -34,20 +25,34 @@ export const Index = ({ appData ,setappData }) => {
 			</div>
 			<div className="subBoxs flexMe">
 				<div className="subBox flexMe centerMy">
-					<select defaultValue={appData.bible} onChange={selectBible} className="btn">
-						<option value="kjv">King jams Version</option>
-						<option value="nev">New English Version</option>
+					<select value={appData.bible} onChange={(e)=>selectBible(e.target.value)} className="btn">
+						{
+							appData.bibleList?.map(bible=>{
+								if(appData.compare !== bible.link){
+									return <option value={bible.link} key={bible.link}>{bible.language} - {bible.name}</option>
+								} else{
+									return"";
+								}
+							})
+						}
 					</select>
 				</div>
 				<div className="subBox flexMe centerMy">
-					<select defaultValue={appData.compare} onChange={selectCompare} className="btn">
+					<select value={appData.compare} onChange={(e)=>selectCompare(e.target.value)} className="btn">
 						<option value="">sub (optional)</option>
-						<option value="kjv">King jams Version</option>
-						<option value="nev">New English Version</option>
+						{
+							appData.bibleList?.map(bible=>{
+								if(appData.bible !== bible.link){
+									return <option value={bible.link} key={bible.link}>{bible.language} - {bible.name}</option>
+								} else{
+									return"";
+								}
+							})
+						}
 					</select>
 				</div>
 			</div>
-			<Link to={"/read/"} className="actionBtn">
+			<Link to={"/read"} className="actionBtn">
 				<span className="btn pointMe">Continue</span>
 			</Link>
 		</div>

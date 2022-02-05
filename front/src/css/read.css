@@ -1,0 +1,30 @@
+/* read page start*/
+.read-con .readboxs {
+	height: calc(100vh - 50px);
+	padding: 20px;
+}
+.non-compared > .readbox {
+	width: 90%;
+}
+.compared > .readbox {
+	width: 600px;
+	max-width: 45%;
+}
+.readbox {
+	height: 95%;
+	margin: auto;
+	padding: 20px;
+}
+.top-logo {
+	height: 50px;
+	/* padding: auto 20px; */
+	align-items: center;
+	justify-content: center;
+}
+.top-block > .container {
+	justify-content: space-between;
+}
+.nav-container{
+
+}
+/* read page end */
