@@ -5,7 +5,6 @@ import { AppDataContext } from '../store/appData';
 
 export const Index = () => {
 	const {appData, selectBible, selectCompare} = useContext(AppDataContext);
-	console.log(appData.bibleList);
 	return <div id="root" className="flexMe centerMy fullIt noFlow">
 		<div className="glassbox welcome">
 			<h1>Welcon to GIWU</h1>

@@ -5,13 +5,13 @@ import { AppDataContext } from '../store/appData';
 import "../css/read.css"
 
 export const Read = () => {
-	const {appData} = useContext(AppDataContext);
+	const {userData} = useContext(AppDataContext);
 	const conClass = " readboxs container flexMe spaceAround"
 	return <div id="root" className="read-con flexMe flexCol fullIt noFlow">
-		<TopNav selected={appData.selected}/>
-		<div className={appData.compare !== ""? "compared " + conClass:"non-compared " + conClass}>
-			<Book/>
-			{appData.compare !== ""? <Book/>:""}
+		<TopNav/>
+		<div className={userData.compare !== ""? "compared " + conClass:"non-compared " + conClass}>
+			<Book compare={false}/>
+			{userData.compare !== ""? <Book compare={true}/>:""}
 		</div>
-	</div>;
+	</div>
 };

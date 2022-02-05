@@ -1,6 +1,7 @@
 /* read page start*/
 .read-con .readboxs {
 	height: calc(100vh - 50px);
+	max-height: 90%;
 	padding: 20px;
 }
 .non-compared > .readbox {
@@ -14,17 +15,33 @@
 	height: 95%;
 	margin: auto;
 	padding: 20px;
+	overflow: hidden;
+}
+.readbox .readboxBody {
+	flex: 1;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.readbox .readboxBody p{
+	cursor: pointer;
 }
 .top-logo {
 	height: 50px;
-	/* padding: auto 20px; */
 	align-items: center;
 	justify-content: center;
 }
 .top-block > .container {
 	justify-content: space-between;
 }
-.nav-container{
-
+.nav-btn {
+	width: auto;
+	height: 30px;
+	margin: 10px;
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	border: 2px solid #999;
+	border-radius: 5px;
+	padding: 1px 10px;
+	cursor: pointer;
 }
 /* read page end */
