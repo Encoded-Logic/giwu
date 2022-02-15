@@ -388,14 +388,14 @@ function AppDataContextProvifer(props) {
 	useEffect(() => {
 		if (!init) {
 			const defaultTheme =
-				getBrowserStore("theme") !== null &&
+				getBrowserStore("theme") !== null ||
 				getBrowserStore("theme") !== ""
 					? getBrowserStore("theme")
 					: "default";
 			toggleTheme(defaultTheme);
 
 			const defaultUserData =
-				getBrowserStore("userData") !== null &&
+				getBrowserStore("userData") !== null ||
 				getBrowserStore("userData") !== ""
 					? JSON.parse(getBrowserStore("userData"))
 					: userData;

@@ -4,7 +4,7 @@ import { toggleTheme } from "../functions/theme"
 import { AppDataContext } from '../store/appData';
 
 export const Index = () => {
-	const {appData, selectBible, selectCompare} = useContext(AppDataContext);
+	const {userData,appData, selectBible, selectCompare} = useContext(AppDataContext);
 	return <div id="root" className="flexMe centerMy fullIt noFlow">
 		<div className="glassbox welcome">
 			<h1>Welcon to GIWU</h1>
@@ -24,10 +24,10 @@ export const Index = () => {
 			</div>
 			<div className="subBoxs flexMe">
 				<div className="subBox flexMe centerMy">
-					<select value={appData.bible} onChange={(e)=>selectBible(e.target.value)} className="btn">
+					<select value={userData.bible} onChange={(e)=>selectBible(e.target.value)} className="btn">
 						{
 							appData.bibleList?.map(bible=>{
-								if(appData.compare !== bible.link){
+								if(userData.compare !== bible.link){
 									return <option value={bible.link} key={bible.link}>{bible.language} - {bible.name}</option>
 								} else{
 									return"";
@@ -37,11 +37,11 @@ export const Index = () => {
 					</select>
 				</div>
 				<div className="subBox flexMe centerMy">
-					<select value={appData.compare} onChange={(e)=>selectCompare(e.target.value)} className="btn">
-						<option value="">sub (optional)</option>
+					<select value={userData.compare} onChange={(e)=>selectCompare(e.target.value)} className="btn">
+						<option>sub (optional)</option>
 						{
 							appData.bibleList?.map(bible=>{
-								if(appData.bible !== bible.link){
+								if(userData.bible !== bible.link){
 									return <option value={bible.link} key={bible.link}>{bible.language} - {bible.name}</option>
 								} else{
 									return"";
